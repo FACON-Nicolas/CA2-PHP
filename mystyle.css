@@ -1,1 +1,13 @@
 /* Add your own CSS under here */
+
+form div, label, textarea, input {
+    padding-block: 5px;
+}
+
+.starter-template h1 {
+    padding-top: 10px;
+}
+
+textarea {
+    height: 200px;
+}
