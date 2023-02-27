@@ -14,11 +14,11 @@ $statement->closeCursor();
     <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
   </div>
 
-    <?php
-        echo count($products);
-        foreach ($products as $product)
-            echo $product['name'].'<br/>';
-    ?>
+    <div class="games">
+        <?php foreach ($products as $product) : ?>
+            <h4><?php echo $product['name'] ?></h4>
+        <?php endforeach ?>
+    </div>
 
 </main><!-- /.container -->
     <script src="js/bootstrap.bundle.min.js"></script>
