@@ -1,11 +1,89 @@
-<?php include "includes/header.php"?>
+<?php
+
+include "includes/header.php";
+include('database.php');
+$statement = $db->prepare('SELECT * FROM GAME');
+$statement->execute();
+$products = $statement->fetchAll();
+$statement->closeCursor();
+?>
+
 <main class="container">
   <div class="starter-template text-center">
-    <h1>Page 2</h1>
-    <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+    <h1>Please contact us</h1>
+    <p class="lead">Please use this page to contact us, about the games we sell or about something else.<br> It will be a pleasure to give you an answer !</p>
   </div>
 
-    <form action="">
+    <form action="" method="POST">
+        <div class="row">
+            <div class="col">
+                <label for="firstName">First Name: </label>
+                <input class="form-control" type="text" name="firstName" id="firstName" placeholder="First Name" required>
+            </div>
+            <div class="col">
+                <label for="lastName">Last Name:</label>
+                <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Last Name" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email">Email: </label>
+            <input type="text" class="form-control" name="email" id="lastName" placeholder="E-mail" pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" required>
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+            <label for="game"> Game's name: </label>
+            <?php if(count($products) < 50): ?>
+                <select class="form-control">
+                    <option selected>Select a game</option>
+                    <?php foreach ($products as $item): ?>
+                        <option><?php echo $item['name'] ?></option>
+                    <?php endforeach; ?>
+                </select>
+            <?php else: ?>
+                <input type="text" name="game" id="game" class="form-control" placeholder="Game's name" pattern="[\pL\pN]+(?=\h+[\pL\pN]+$)">
+            <?php endif; ?>
+        </div>
+        <div>
+            <label for="request">Request</label>
+            <div class="form-group">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                    <label class="form-check-label" for="inlineRadio1">Question</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                    <label class="form-check-label" for="inlineRadio2">Issue</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                    <label class="form-check-label" for="inlineRadio3">Suggestion</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <label for="city">Town / City: </label>
+                <input class="form-control" type="text" name="city" id="city" placeholder="city" pattern="[\pL\pN]+(?=\h+[\pL\pN]+$)" required>
+            </div>
+            <div class="col">
+                <label for="street">Street: </label>
+                <input class="form-control" type="text" name="street" id="street" placeholder="street" pattern="[\pL\pN]+(?=\h+[\pL\pN]+$)" required>
+            </div>
+            <div class="col-1">
+                <label for="street-number">N°: </label>
+                <input class="form-control" type="text" name="street-number" id="street-number" placeholder="street number" pattern="[0-9]{1-5}" required>
+            </div>
+            <div class="col-2">
+                <label for="lastName">Zip:</label>
+                <input class="form-control" type="text" name="zip" id="zip" placeholder="Zip" pattern="^[AC-FHKNPRTV-Y]\d[0-9W][ -]?[0-9AC-FHKNPRTV-Y]{4}$" required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <textarea class="form-control" placeholder="Please write your message here"></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit">Button</button>
 
     </form>
 
