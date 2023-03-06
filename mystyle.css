@@ -16,3 +16,26 @@ textarea {
     width: min(300px, 80vw);
     border-radius: 10px;
 }
+
+.main-img {
+    width: 100vw;
+}
+
+.game-main-img {
+    height: 20vw;
+    transform: translate(-65vw, 40%);
+}
+
+.game-main-img, .game-main-title {
+    position: absolute;
+    -webkit-filter: drop-shadow(5px 5px 5px #222);
+    filter: drop-shadow(5px 5px 5px #222);
+}
+
+.game-main-title {
+    color: white;
+    font-size: 4vw;
+    transform: translate(13vw, 27%);
+    line-height: 6vw;
+    text-align: center;
+}
