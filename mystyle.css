@@ -11,3 +11,8 @@ form div, label, textarea, input {
 textarea {
     height: 200px;
 }
+
+.game-box {
+    width: min(300px, 80vw);
+    border-radius: 10px;
+}
