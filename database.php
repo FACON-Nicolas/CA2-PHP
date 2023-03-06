@@ -20,7 +20,7 @@ try {
                     $id = $data[0];
                     $name = $data[1];
                     $publisher = $data[2];
-                    $released_year = (int)$data[3];
+                    $released_year = $data[3];
                     $developer = $data[4]; // to split.
                     $gender = $data[5]; // to split
                     $website = $data[6];
