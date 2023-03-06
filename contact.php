@@ -14,7 +14,7 @@ $statement->closeCursor();
     <p class="lead">Please use this page to contact us, about the games we sell or about something else.<br> It will be a pleasure to give you an answer !</p>
   </div>
 
-    <form action="" method="POST">
+    <form action="contact_post.php" method="POST">
         <div class="row">
             <div class="col">
                 <label for="firstName">First Name: </label>
@@ -27,16 +27,16 @@ $statement->closeCursor();
         </div>
         <div class="form-group">
             <label for="email">Email: </label>
-            <input type="text" class="form-control" name="email" id="lastName" placeholder="E-mail" pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" required>
+            <input type="text" class="form-control" name="email" placeholder="E-mail" pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" required>
             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
         </div>
         <div class="form-group">
             <label for="game"> Game's name: </label>
             <?php if(count($products) < 50): ?>
-                <select class="form-control">
+                <select class="form-control" name="game">
                     <option selected>Select a game</option>
                     <?php foreach ($products as $item): ?>
-                        <option><?php echo $item['name'] ?></option>
+                        <option name="game" value="<?php echo $item['name'] ?>"><?php echo $item['name'] ?></option>
                     <?php endforeach; ?>
                 </select>
             <?php else: ?>
@@ -47,15 +47,15 @@ $statement->closeCursor();
             <label for="request">Request</label>
             <div class="form-group">
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                    <input class="form-check-input" type="radio" name="request" id="inlineRadio1" value="Question">
                     <label class="form-check-label" for="inlineRadio1">Question</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                    <input class="form-check-input" type="radio" name="request" id="inlineRadio2" value="Issue">
                     <label class="form-check-label" for="inlineRadio2">Issue</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                    <input class="form-check-input" type="radio" name="request" id="inlineRadio3" value="Suggestion">
                     <label class="form-check-label" for="inlineRadio3">Suggestion</label>
                 </div>
             </div>
@@ -72,7 +72,7 @@ $statement->closeCursor();
             </div>
             <div class="col-1">
                 <label for="street-number">N°: </label>
-                <input class="form-control" type="text" name="street-number" id="street-number" placeholder="street number" pattern="[0-9]{1-5}" required>
+                <input class="form-control" type="text" name="number" id="street-number" placeholder="street number" pattern="[0-9]{1-5}" required>
             </div>
             <div class="col-2">
                 <label for="lastName">Zip:</label>
@@ -81,7 +81,7 @@ $statement->closeCursor();
         </div>
 
         <div class="form-group">
-            <textarea class="form-control" placeholder="Please write your message here"></textarea>
+            <textarea class="form-control" placeholder="Please write your message here" name="message"></textarea>
         </div>
         <button class="btn btn-primary" type="submit">Button</button>
 
