@@ -33,7 +33,7 @@ $statement->closeCursor();
                 </a>
                 <p class="text-primary">
                 <p class="fw-bold"><?php echo $product['name'] ?></p>
-                    <?php $tab = get_dev($product['id'], $db);
+                    <p><?php $tab = get_dev($product['id'], $db);
                     echo "Released year: ".$product['released_year']."<br/>";
                     echo "Publisher: " . $product["publisher"]."<br/>";
                     if (count($tab) > 1) {
