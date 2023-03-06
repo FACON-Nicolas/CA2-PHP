@@ -27,7 +27,7 @@
           <span class="d-flex">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="page-1.php">Games</a>
+                <a class="nav-link" aria-current="page" href="games.php">Games</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" aria-current="page" href="contact.php">Contact</a>
