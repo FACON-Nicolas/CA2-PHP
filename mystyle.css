@@ -14,7 +14,6 @@ textarea {
 
 .game-box {
     width: min(300px, 80vw);
-    border-radius: 10px;
 }
 
 .main-img {
@@ -38,4 +37,26 @@ textarea {
     transform: translate(13vw, 27%);
     line-height: 6vw;
     text-align: center;
+}
+
+div.scrollmenu {
+    overflow: auto;
+    white-space: nowrap;
+    height: 30vw;
+}
+
+.game-scroll:hover {
+    height: 30vw;
+    margin: 0 0.2vw;
+    transition: 0.25s;
+}
+
+.game-scroll {
+    height: 25vw;
+    margin: 2.5vw 0.2vw;
+    transition: 0.25s;
+}
+
+.game-box, .game-scroll {
+    border-radius: 10px;
 }
