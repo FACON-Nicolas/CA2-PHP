@@ -25,14 +25,16 @@ try {
                     $gender = $data[5]; // to split
                     $website = $data[6];
                     $media = $data[7];
+                    $description = $data[8];
 
-                    $statement = $db->prepare('INSERT INTO `GAME` VALUES (:id, :name, :publisher, :released_year, :website, :media)');
+                    $statement = $db->prepare('INSERT INTO `GAME` VALUES (:id, :name, :publisher, :released_year, :website, :media, :desc)');
                     $statement->bindValue(':id', $id);
                     $statement->bindValue(':name', $name);
                     $statement->bindValue(':publisher', $publisher);
                     $statement->bindValue(':released_year', $released_year);
                     $statement->bindValue(':website', $website);
                     $statement->bindValue(':media', $media);
+                    $statement->bindValue(":desc", $description);
                     $statement->execute();
                     $statement->closeCursor();
 
