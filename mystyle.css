@@ -57,6 +57,22 @@ div.scrollmenu {
     transition: 0.25s;
 }
 
-.game-box, .game-scroll {
+.game-box, .game-scroll, .game-pic {
     border-radius: 10px;
+}
+
+.a {
+    text-decoration: none;
+}
+
+.a:hover {
+    text-decoration: underline;
+}
+
+.game-individual, .game-pic {
+    width: 45vw;
+}
+
+.game-individual {
+    margin: auto;
 }
