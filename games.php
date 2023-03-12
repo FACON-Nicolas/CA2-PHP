@@ -28,7 +28,8 @@ $statement->closeCursor();
     <div class="d-flex flex-wrap gap-5 justify-content-center">
         <?php foreach ($products as $product) : ?>
             <div class="game">
-                <a href="<?php echo $product['website'] ?>" target="_blank">
+                <a href="<?php
+                        echo "game.php?id=".$product['id'] ?>">
                     <img class="game-box" src="<?php echo $product['media_url']?>" alt="<?php echo $product['name'] ?>'s box">
                 </a>
                 <p class="text-primary">
@@ -47,9 +48,11 @@ $statement->closeCursor();
                         echo "Developer: " . $tab[0]["name"] . "<br/>";
                     }
                     ?>
+                    </p>
                 </p>
             </div>
         <?php endforeach ?>
+
     </div>
 
 </main><!-- /.container -->
