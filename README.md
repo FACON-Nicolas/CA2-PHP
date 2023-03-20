@@ -32,11 +32,11 @@ sudo apt install php # ubuntu
     php -S localhost:8000 -t .
 ```
 
-# Database
-
 # Link
 
 To see the website, click [here](https://mysql07.comp.dkit.ie/D00263494/)
+
+# Database
 
 ![](http://www.plantuml.com/plantuml/png/TKzToeCm47pVK-G2kOCF7tWCYMRukh1HoSQM8hrxNL4YI5yopCyCsKPBo6L9GaI315NNXWItalEEextZnWqZTCWy5vv6enc2e8ZT6o6RC2-zi3wmanTwvRBt4Y87-fppVtX2fXdPhUVwpQoMuV-67SUQQZ76UxywTi7FYQFilR-awLBS7TEeVjMqWvtg9TTivIN95m00)
 
